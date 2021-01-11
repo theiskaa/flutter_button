@@ -1,0 +1,20 @@
+name: flutter_button
+description: This packege help you for develop applications fast and clean. 
+version: 0.0.3
+# author: Ismael Shakverdiev <st.bahahd@gmail.com> 
+homepage: https://github.com/theiskaa/flutter_button
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  font_awesome_flutter: ^8.10.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
