@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_button/custom/animated_checkbox.dart';
 import 'package:flutter_button/custom/hover_button.dart';
 import 'package:flutter_button/custom/insta_love_button.dart';
 import 'package:flutter_button/custom/like_button.dart';
@@ -15,10 +16,40 @@ class Custom extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 50),
       child: Column(
         children: [
-          buildStoryButton(),
-          AnimatedStoryButton(
-            storyButton: buildStoryButton(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              AnimatedCheckBox(
+                activeSize: 55,
+                defaultSize: 50,
+                activeColor: Colors.red,
+              ),
+              SizedBox(width: 15),
+              AnimatedTitleCheckBox(
+                title: "L",
+              ),
+              SizedBox(width: 15),
+              AnimatedTitleCheckBox(
+                inactiveColor: Colors.grey[300],
+                activeSize: 50,
+                defaultSize: 45,
+                activeTitleSize: 22,
+                defaultTitleSize: 16,
+                title: "YES",
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
+                ),
+              ),
+              SizedBox(width: 15),
+              AnimatedIconCheckBox(
+                icon: Icons.done,
+              ),
+            ],
           ),
+          SizedBox(height: 50),
+          buildStoryButton(),
+          SizedBox(height: 50),
           buildInstaDoubleTapLoveButtons(),
           SizedBox(height: 50),
           buildDivider(),
@@ -45,21 +76,45 @@ class Custom extends StatelessWidget {
     );
   }
 
-  StoryButton buildStoryButton() {
-    return StoryButton(
-          size: 100,
+  Widget buildStoryButton() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        StoryButton(
+          size: 80,
           onPressed: () {},
           child: Image.asset(
             'assets/like.png',
             height: 40,
           ),
-          strokeWidth: 5,
+          strokeWidth: 3.5,
           radius: 100,
           gradient: LinearGradient(colors: [
             Colors.pink,
             Colors.orange,
           ]),
-        );
+        ),
+        SizedBox(width: 15),
+        AnimatedStoryButton(
+          storyButton: StoryButton(
+            size: 100,
+            onPressed: () {},
+            child: Image.asset(
+              'assets/like.png',
+              height: 40,
+            ),
+            strokeWidth: 5,
+            radius: 100,
+            gradient: LinearGradient(
+              colors: [
+                Colors.pink,
+                Colors.orange,
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
   }
 
   Column buildInstaDoubleTapLoveButtons() {

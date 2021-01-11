@@ -110,8 +110,10 @@ class _PaintGradient extends CustomPainter {
 
 class AnimatedStoryButton extends StatefulWidget {
   final StoryButton storyButton;
+  final Duration duration;
   AnimatedStoryButton({
     @required this.storyButton,
+    this.duration,
   });
   @override
   _AnimatedStoryButtonState createState() => _AnimatedStoryButtonState();
@@ -125,7 +127,7 @@ class _AnimatedStoryButtonState extends State<AnimatedStoryButton>
   void initState() {
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 500),
+      duration: (widget.duration != null) ? widget.duration : Duration(milliseconds: 200),
     );
 
     _sizeAnimation = TweenSequence(<TweenSequenceItem<double>>[
@@ -133,13 +135,6 @@ class _AnimatedStoryButtonState extends State<AnimatedStoryButton>
         tween: Tween<double>(
           begin: widget.storyButton.size,
           end: widget.storyButton.size - 5,
-        ),
-        weight: widget.storyButton.size,
-      ),
-      TweenSequenceItem(
-        tween: Tween<double>(
-          begin: widget.storyButton.size - 5,
-          end: widget.storyButton.size,
         ),
         weight: widget.storyButton.size,
       ),
@@ -163,7 +158,7 @@ class _AnimatedStoryButtonState extends State<AnimatedStoryButton>
       onTapDown: (det) {
         _animationController.forward();
       },
-      onTap: () {
+      onTapCancel: () {
         _animationController.reverse();
       },
       onTapUp: (det) {
