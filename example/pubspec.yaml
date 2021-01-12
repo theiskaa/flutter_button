@@ -53,6 +53,8 @@ flutter:
     - assets/like.png
     - assets/photo.png
     - assets/avatar.JPG
+    - assets/moon.png
+    - assets/earth.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
