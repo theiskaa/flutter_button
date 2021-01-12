@@ -3,6 +3,7 @@ library flutter_button;
 import 'package:flutter/material.dart';
 
 class AnimatedCheckBox extends StatefulWidget {
+  final Function onChanged;
   final Color inactiveColor;
   final Color activeColor;
   final double defaultSize;
@@ -15,6 +16,8 @@ class AnimatedCheckBox extends StatefulWidget {
 
   ///
   AnimatedCheckBox({
+    Key key,
+    this.onChanged,
     this.inactiveColor,
     this.activeColor,
     this.defaultSize,
@@ -24,7 +27,11 @@ class AnimatedCheckBox extends StatefulWidget {
     this.borderRadius,
     this.borderColor,
     this.duration,
-  });
+  }) : super(key: key);
+
+  forwardAnimation() => createState().forwardAnimation();
+  reverseAnimation() => createState().reverseAnimation();
+
   @override
   _AnimatedCheckBoxState createState() => _AnimatedCheckBoxState();
 }
@@ -36,7 +43,13 @@ class _AnimatedCheckBoxState extends State<AnimatedCheckBox>
   Animation _colorAnimation;
   Animation _curve;
 
-  bool isActive = false;
+  void forwardAnimation() {
+    _animationController.forward();
+  }
+
+  void reverseAnimation() {
+    _animationController.reverse();
+  }
 
   @override
   void initState() {
@@ -87,10 +100,12 @@ class _AnimatedCheckBoxState extends State<AnimatedCheckBox>
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        _animationController.forward();
+        forwardAnimation();
+        widget.onChanged();
       },
       onDoubleTap: () {
-        _animationController.reverse();
+        reverseAnimation();
+        widget.onChanged();
       },
       child: Container(
         height: _sizeAnimation.value,
@@ -125,6 +140,7 @@ class _AnimatedCheckBoxState extends State<AnimatedCheckBox>
 
 class AnimatedTitleCheckBox extends StatefulWidget {
   final String title;
+  final Function onChanged;
   final Color inactiveColor;
   final Color activeColor;
   final Color inactiveTitleColor;
@@ -141,6 +157,7 @@ class AnimatedTitleCheckBox extends StatefulWidget {
   ///
   AnimatedTitleCheckBox({
     @required this.title,
+    this.onChanged,
     this.inactiveColor,
     this.activeColor,
     this.inactiveTitleColor,
@@ -154,6 +171,11 @@ class AnimatedTitleCheckBox extends StatefulWidget {
     this.borderColor,
     this.duration,
   });
+
+  forwardAnimation() => createState().forwardAnimation();
+
+  reverseAnimation() => createState().reverseAnimation();
+
   @override
   _AnimatedTitleCheckBoxState createState() => _AnimatedTitleCheckBoxState();
 }
@@ -168,6 +190,14 @@ class _AnimatedTitleCheckBoxState extends State<AnimatedTitleCheckBox>
   Animation _curve;
 
   bool isActive = false;
+
+  void forwardAnimation() {
+    _animationController.forward();
+  }
+
+  void reverseAnimation() {
+    _animationController.reverse();
+  }
 
   @override
   void initState() {
@@ -295,6 +325,7 @@ class _AnimatedTitleCheckBoxState extends State<AnimatedTitleCheckBox>
 
 class AnimatedIconCheckBox extends StatefulWidget {
   final IconData icon;
+  final Function onChanged;
   final Color inactiveColor;
   final Color activeColor;
   final Color inactiveIconColor;
@@ -311,6 +342,7 @@ class AnimatedIconCheckBox extends StatefulWidget {
   ///
   AnimatedIconCheckBox({
     @required this.icon,
+    this.onChanged,
     this.inactiveColor,
     this.activeColor,
     this.inactiveIconColor,
@@ -324,6 +356,10 @@ class AnimatedIconCheckBox extends StatefulWidget {
     this.borderColor,
     this.duration,
   });
+
+  forwardAnimation() => createState().forwardAnimation();
+  reverseAnimation() => createState().reverseAnimation();
+
   @override
   _AnimatedIconCheckBoxState createState() => _AnimatedIconCheckBoxState();
 }
@@ -338,6 +374,14 @@ class _AnimatedIconCheckBoxState extends State<AnimatedIconCheckBox>
   Animation _curve;
 
   bool isActive = false;
+
+  void forwardAnimation() {
+    _animationController.forward();
+  }
+
+  void reverseAnimation() {
+    _animationController.reverse();
+  }
 
   @override
   void initState() {

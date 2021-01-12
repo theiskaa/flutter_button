@@ -1,6 +1,7 @@
 import 'package:example/screens/3d.dart';
 import 'package:example/screens/custom.dart';
 import 'package:example/screens/fab.dart';
+import 'package:example/screens/insta.dart';
 import 'package:example/screens/social.dart';
 import 'package:example/screens/text.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +27,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 5,
+      length: 6,
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.red,
@@ -44,6 +45,7 @@ class Home extends StatelessWidget {
         Button3DScreen(),
         Social(),
         Custom(),
+        InstaScreen(),
         TextScreen(),
         FabScreen(),
       ],
@@ -57,6 +59,7 @@ class Home extends StatelessWidget {
         Tab(icon: Text("3D")),
         Tab(icon: Text("Social")),
         Tab(icon: Text("Custom")),
+        Tab(icon: Text("Insta")),
         Tab(icon: Text("Text")),
         Tab(icon: Text("FAB")),
       ],

@@ -7,12 +7,14 @@ class StoryButton extends StatelessWidget {
   final double _radius;
   final double size;
   final HitTestBehavior behavior;
+  final double childRadius;
 
   StoryButton({
     this.size,
     this.behavior,
     double strokeWidth,
     double radius,
+    this.childRadius,
     @required Gradient gradient,
     @required Widget child,
     @required VoidCallback onPressed,
@@ -41,7 +43,14 @@ class StoryButton extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [_child],
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(
+                  (childRadius != null) ? childRadius : 300,
+                ),
+                child: _child,
+              ),
+            ],
           ),
         ),
       ),
@@ -127,7 +136,9 @@ class _AnimatedStoryButtonState extends State<AnimatedStoryButton>
   void initState() {
     _animationController = AnimationController(
       vsync: this,
-      duration: (widget.duration != null) ? widget.duration : Duration(milliseconds: 200),
+      duration: (widget.duration != null)
+          ? widget.duration
+          : Duration(milliseconds: 200),
     );
 
     _sizeAnimation = TweenSequence(<TweenSequenceItem<double>>[

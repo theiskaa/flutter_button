@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_button/custom/animated_checkbox.dart';
 import 'package:flutter_button/custom/hover_button.dart';
-import 'package:flutter_button/custom/insta_love_button.dart';
 import 'package:flutter_button/custom/like_button.dart';
 import 'package:flutter_button/custom/opacity_button.dart';
 import 'package:flutter_button/custom/anime_press_button.dart';
-import 'package:flutter_button/custom/story_button.dart';
 
+// ignore: must_be_immutable
 class Custom extends StatelessWidget {
-  const Custom({Key key}) : super(key: key);
+  Custom({Key key}) : super(key: key);
+  bool value = false;
+  bool value1 = false;
+  bool value2 = false;
+  bool value3 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -16,41 +19,7 @@ class Custom extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 50),
       child: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              AnimatedCheckBox(
-                activeSize: 55,
-                defaultSize: 50,
-                activeColor: Colors.red,
-              ),
-              SizedBox(width: 15),
-              AnimatedTitleCheckBox(
-                title: "L",
-              ),
-              SizedBox(width: 15),
-              AnimatedTitleCheckBox(
-                inactiveColor: Colors.grey[300],
-                activeSize: 50,
-                defaultSize: 45,
-                activeTitleSize: 22,
-                defaultTitleSize: 16,
-                title: "YES",
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
-                ),
-              ),
-              SizedBox(width: 15),
-              AnimatedIconCheckBox(
-                icon: Icons.done,
-              ),
-            ],
-          ),
-          SizedBox(height: 50),
-          buildStoryButton(),
-          SizedBox(height: 50),
-          buildInstaDoubleTapLoveButtons(),
+          buildCheckBoxs(), //IT'S JUST DEMO
           SizedBox(height: 50),
           buildDivider(),
           SizedBox(height: 50),
@@ -76,68 +45,53 @@ class Custom extends StatelessWidget {
     );
   }
 
-  Widget buildStoryButton() {
+  Row buildCheckBoxs() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        StoryButton(
-          size: 80,
-          onPressed: () {},
-          child: Image.asset(
-            'assets/like.png',
-            height: 40,
-          ),
-          strokeWidth: 3.5,
-          radius: 100,
-          gradient: LinearGradient(colors: [
-            Colors.pink,
-            Colors.orange,
-          ]),
+        AnimatedCheckBox(
+          activeSize: 55,
+          defaultSize: 50,
+          activeColor: Colors.red,
+          onChanged: () {
+            value = !value;
+            print("AnimatedCheckBox's value = $value");
+            AnimatedTitleCheckBox(title: "whyw").reverseAnimation();
+            AnimatedIconCheckBox(icon: Icons.done).reverseAnimation();
+          },
         ),
         SizedBox(width: 15),
-        AnimatedStoryButton(
-          storyButton: StoryButton(
-            size: 100,
-            onPressed: () {},
-            child: Image.asset(
-              'assets/like.png',
-              height: 40,
-            ),
-            strokeWidth: 5,
-            radius: 100,
-            gradient: LinearGradient(
-              colors: [
-                Colors.pink,
-                Colors.orange,
-              ],
-            ),
+        AnimatedTitleCheckBox(
+          title: "L",
+          onChanged: () {
+            value1 = !value1;
+            print("AnimatedTitleCheckBox's value = $value1");
+          },
+        ),
+        SizedBox(width: 15),
+        AnimatedTitleCheckBox(
+          inactiveColor: Colors.grey[300],
+          activeSize: 50,
+          defaultSize: 45,
+          activeTitleSize: 22,
+          defaultTitleSize: 16,
+          title: "YES",
+          onChanged: () {
+            value2 = !value2;
+            print("Customized AnimatedTitleCheckBox's value = $value2");
+          },
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
           ),
         ),
-      ],
-    );
-  }
-
-  Column buildInstaDoubleTapLoveButtons() {
-    return Column(
-      children: [
-        InstaLoveButton(
-          image: AssetImage("assets/photo.png"),
-          //image: NetworkImage("https://picsum.photos/200/300"),
-          onTap: () {},
-        ),
-        SizedBox(height: 30),
-        InstaLoveButton(
-          iconColor: Colors.red,
-          icon: Icons.favorite_border,
-          size: 80,
-          height: 250,
-          //width: MediaQuery.of(context).size.width,
-          curve: Curves.bounceInOut,
-          duration: Duration(seconds: 1),
-          image: NetworkImage("https://picsum.photos/200/300"),
-          // image: AssetImage("assets/photo.png"),
-
-          onTap: () {},
+        SizedBox(width: 15),
+        AnimatedIconCheckBox(
+          icon: Icons.done,
+          onChanged: () {
+            value3 = !value3;
+            print("AnimatedIconCheckBox's value = $value3");
+          },
         ),
       ],
     );

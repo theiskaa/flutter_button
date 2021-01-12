@@ -52,6 +52,7 @@ flutter:
   assets:
     - assets/like.png
     - assets/photo.png
+    - assets/avatar.JPG
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
