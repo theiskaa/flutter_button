@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_button/custom/opacity_button.dart';
+
+import '../custom/opacity_button.dart';
 
 class AuthButton extends StatefulWidget {
   final Function onTap;

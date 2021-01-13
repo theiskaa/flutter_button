@@ -42,6 +42,7 @@ class FabScreen extends StatelessWidget {
                     image: AssetImage("assets/moon.png"),
                     onTap: () {},
                     wOpacity: true,
+
                     /// also you can use that with child [child: Icon(Icons.add, color: Colors.black, size: 45)]
                   ),
                   SizedBox(height: 50),
