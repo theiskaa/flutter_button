@@ -39,19 +39,21 @@ class FabScreen extends StatelessWidget {
               Column(
                 children: [
                   ImageFAB(
-                    image: AssetImage("assets/moon.png"),
-                    onTap: () {},
-                    wOpacity: true,
-
-                    /// also you can use that with child [child: Icon(Icons.add, color: Colors.black, size: 45)]
-                  ),
-                  SizedBox(height: 50),
-                  ImageFAB(
                     image: AssetImage("assets/earth.png"),
                     child: Icon(Icons.favorite, color: Colors.red, size: 40),
                     onTap: () {},
                     wOpacity: true,
                     opacityValue: .3,
+                  ),
+                  SizedBox(height: 50),
+                  AnimatedImageFAB(
+                    image: AssetImage("assets/moon.png"),
+                    onTap: () {},
+                    duration: Duration(milliseconds: 150),
+
+                    /// [child:]=
+                    /// [defaultSize:]
+                    /// [tappedSize:]
                   ),
                 ],
               ),
