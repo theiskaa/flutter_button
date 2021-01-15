@@ -55,9 +55,6 @@ class Custom extends StatelessWidget {
           activeColor: Colors.red,
           onChanged: () {
             value = !value;
-            print("AnimatedCheckBox's value = $value");
-            AnimatedTitleCheckBox(title: "whyw").reverseAnimation();
-            AnimatedIconCheckBox(icon: Icons.done).reverseAnimation();
           },
         ),
         SizedBox(width: 15),
