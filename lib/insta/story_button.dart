@@ -120,8 +120,10 @@ class _PaintGradient extends CustomPainter {
 class AnimatedStoryButton extends StatefulWidget {
   final StoryButton storyButton;
   final Duration duration;
+  final Function onTap;
   AnimatedStoryButton({
     @required this.storyButton,
+    @required this.onTap,
     this.duration,
   });
   @override
@@ -174,6 +176,7 @@ class _AnimatedStoryButtonState extends State<AnimatedStoryButton>
       },
       onTapUp: (det) {
         _animationController.reverse();
+        widget.onTap();
       },
       child: Container(
         height: _sizeAnimation.value,

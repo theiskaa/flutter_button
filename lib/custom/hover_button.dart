@@ -108,7 +108,6 @@ class _HoverButtonState extends State<HoverButton> {
 ///
 
 class AnimatedHoverButton extends StatefulWidget {
-  @required
   final String title;
   final VoidCallback onTap;
   final Color borderColor;
@@ -123,8 +122,8 @@ class AnimatedHoverButton extends StatefulWidget {
 
   AnimatedHoverButton({
     Key key,
-    this.title,
-    this.onTap,
+    @required this.title,
+    @required this.onTap,
     this.borderColor,
     this.spashColor,
     this.titleColor,

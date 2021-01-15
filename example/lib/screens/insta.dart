@@ -50,6 +50,7 @@ class InstaScreen extends StatelessWidget {
         ),
         SizedBox(width: 30),
         AnimatedStoryButton(
+          onTap: (){},
           storyButton: StoryButton(
             size: 100,
             onPressed: () {},

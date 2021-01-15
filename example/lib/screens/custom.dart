@@ -15,32 +15,34 @@ class Custom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      padding: EdgeInsets.symmetric(vertical: 50),
-      child: Column(
-        children: [
-          buildCheckBoxs(), //IT'S JUST DEMO
-          SizedBox(height: 50),
-          buildDivider(),
-          SizedBox(height: 50),
-          buildHoverButtons(),
-          SizedBox(height: 50),
-          buildDivider(),
-          SizedBox(height: 50),
-          buildAnimatedHoverButtons(),
-          SizedBox(height: 50),
-          buildDivider(),
-          SizedBox(height: 50),
-          lovebuttons(),
-          SizedBox(height: 50),
-          buildDivider(),
-          SizedBox(height: 50),
-          buildOpacityButtons(),
-          SizedBox(height: 50),
-          buildDivider(),
-          SizedBox(height: 50),
-          buildAnimePressButton(),
-        ],
+    return Container(
+      child: SingleChildScrollView(
+        padding: EdgeInsets.symmetric(vertical: 50),
+        child: Column(
+          children: [
+            buildCheckBoxs(), //IT'S JUST DEMO
+            SizedBox(height: 50),
+            buildDivider(),
+            SizedBox(height: 50),
+            buildHoverButtons(),
+            SizedBox(height: 50),
+            buildDivider(),
+            SizedBox(height: 50),
+            buildAnimatedHoverButtons(),
+            SizedBox(height: 50),
+            buildDivider(),
+            SizedBox(height: 50),
+            lovebuttons(),
+            SizedBox(height: 50),
+            buildDivider(),
+            SizedBox(height: 50),
+            buildOpacityButtons(),
+            SizedBox(height: 50),
+            buildDivider(),
+            SizedBox(height: 50),
+            buildAnimePressButton(),
+          ],
+        ),
       ),
     );
   }
@@ -55,9 +57,6 @@ class Custom extends StatelessWidget {
           activeColor: Colors.red,
           onChanged: () {
             value = !value;
-            print("AnimatedCheckBox's value = $value");
-            AnimatedTitleCheckBox(title: "whyw").reverseAnimation();
-            AnimatedIconCheckBox(icon: Icons.done).reverseAnimation();
           },
         ),
         SizedBox(width: 15),
@@ -178,6 +177,7 @@ class Custom extends StatelessWidget {
       children: [
         // Default Mode
         AnimatedHoverButton(
+          title: "Animated Hover Button",
           //title: "Animated Hover Button",
           onTap: () {},
         ),
