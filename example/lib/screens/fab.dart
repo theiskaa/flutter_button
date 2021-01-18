@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_button/fabs/custom_fab.dart';
-import 'package:flutter_button/fabs/menu_fab.dart';
-import 'package:flutter_button/fabs/star_fab.dart';
-import 'package:flutter_button/fabs/image_fab.dart';
+import 'package:flutter_button/flutter_button.dart';
 
 class FabScreen extends StatelessWidget {
   const FabScreen({Key key}) : super(key: key);
@@ -11,6 +8,7 @@ class FabScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: MenuFAB(
+        curve: Curves.bounceInOut,
         animatedIcon: AnimatedIcons.add_event,
         activeColor: Colors.purple,
         inactiveColor: Colors.pink,

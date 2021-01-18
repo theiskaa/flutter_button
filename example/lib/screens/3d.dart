@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_button/3d/3d_button.dart';
+import 'package:flutter_button/flutter_button.dart';
 
 class Button3DScreen extends StatelessWidget {
   const Button3DScreen({Key key}) : super(key: key);

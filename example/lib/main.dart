@@ -5,7 +5,6 @@ import 'package:example/screens/insta.dart';
 import 'package:example/screens/social.dart';
 import 'package:example/screens/text.dart';
 import 'package:flutter/material.dart';
-
 void main() {
   runApp(MyApp());
 }
