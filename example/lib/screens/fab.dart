@@ -8,6 +8,7 @@ class FabScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: MenuFAB(
+        curve: Curves.bounceInOut,
         animatedIcon: AnimatedIcons.add_event,
         activeColor: Colors.purple,
         inactiveColor: Colors.pink,
