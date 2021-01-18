@@ -476,8 +476,8 @@ MagicalGGButton(
 **Note:** U can change only Magical`FB`Button with `GG`, `TW` or `GI` for get Magical Google, Twitter and Github buttons, <br/>
 **Magial Buttons:**   `MagicalFBButton`, `MagicalGGButton`, `MagicalGIButton`, `MagicalTWButton`.
 
-# How to Contribute this package?
+# Want to know more about `flutter_button`?
+if you wanna to know more about using this plugin check [example repository](https://github.com/theiskaa/flutter_button/tree/main/example).
+in there every button was used and explained everthing `flutter_button`
 
-See [Contributing.md](https://github.com/aagarwal1012/Animated-Text-Kit/blob/master/CONTRIBUTING.md).
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind are welcome! See [Contributing.md](https://github.com/aagarwal1012/Animated-Text-Kit/blob/master/CONTRIBUTING.md).
+## Thanks for looking!
