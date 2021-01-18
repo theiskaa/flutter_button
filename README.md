@@ -36,7 +36,8 @@
   - [Flutter Text Button](#Text)
   - [Gradient Text Button](#GradientText)
   - [Social Auth Buttons](#Social)
-- [Contributors](#contributors)
+  - [Magical Auth Buttons][#Magical]
+- [Want to get more?](#Magical)
 
 # Installing
 
