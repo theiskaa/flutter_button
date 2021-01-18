@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_button/custom/animated_checkbox.dart';
-import 'package:flutter_button/custom/hover_button.dart';
-import 'package:flutter_button/custom/like_button.dart';
-import 'package:flutter_button/custom/opacity_button.dart';
-import 'package:flutter_button/custom/anime_press_button.dart';
+import 'package:flutter_button/flutter_button.dart';
 
 // ignore: must_be_immutable
 class Custom extends StatelessWidget {
@@ -15,32 +11,34 @@ class Custom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      padding: EdgeInsets.symmetric(vertical: 50),
-      child: Column(
-        children: [
-          buildCheckBoxs(), //IT'S JUST DEMO
-          SizedBox(height: 50),
-          buildDivider(),
-          SizedBox(height: 50),
-          buildHoverButtons(),
-          SizedBox(height: 50),
-          buildDivider(),
-          SizedBox(height: 50),
-          buildAnimatedHoverButtons(),
-          SizedBox(height: 50),
-          buildDivider(),
-          SizedBox(height: 50),
-          lovebuttons(),
-          SizedBox(height: 50),
-          buildDivider(),
-          SizedBox(height: 50),
-          buildOpacityButtons(),
-          SizedBox(height: 50),
-          buildDivider(),
-          SizedBox(height: 50),
-          buildAnimePressButton(),
-        ],
+    return Container(
+      child: SingleChildScrollView(
+        padding: EdgeInsets.symmetric(vertical: 50),
+        child: Column(
+          children: [
+            buildCheckBoxs(), //IT'S JUST DEMO
+            SizedBox(height: 50),
+            buildDivider(),
+            SizedBox(height: 50),
+            buildHoverButtons(),
+            SizedBox(height: 50),
+            buildDivider(),
+            SizedBox(height: 50),
+            buildAnimatedHoverButtons(),
+            SizedBox(height: 50),
+            buildDivider(),
+            SizedBox(height: 50),
+            lovebuttons(),
+            SizedBox(height: 50),
+            buildDivider(),
+            SizedBox(height: 50),
+            buildOpacityButtons(),
+            SizedBox(height: 50),
+            buildDivider(),
+            SizedBox(height: 50),
+            buildAnimePressButton(),
+          ],
+        ),
       ),
     );
   }
@@ -55,9 +53,6 @@ class Custom extends StatelessWidget {
           activeColor: Colors.red,
           onChanged: () {
             value = !value;
-            print("AnimatedCheckBox's value = $value");
-            AnimatedTitleCheckBox(title: "whyw").reverseAnimation();
-            AnimatedIconCheckBox(icon: Icons.done).reverseAnimation();
           },
         ),
         SizedBox(width: 15),
@@ -106,7 +101,7 @@ class Custom extends StatelessWidget {
           },
           title: "Anime Press Button",
         ),
-        SizedBox(height: 30),
+        SizedBox(height: 30), 
         AnimePressButton(
           borderRadius: BorderRadius.circular(100),
           color: Colors.red,
@@ -178,6 +173,7 @@ class Custom extends StatelessWidget {
       children: [
         // Default Mode
         AnimatedHoverButton(
+          title: "Animated Hover Button",
           //title: "Animated Hover Button",
           onTap: () {},
         ),

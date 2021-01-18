@@ -1,50 +1,78 @@
-### `flutter_button` extension contains:
+# <div align="center">Flutter Button</div>
 
-- 3D Button,
-- Anime Press Button, Hover Button Animated Hover Button, Like Button, Opacity Button, Insta Double Tap Love Button/Card,
-- Auth Button, Facebook Auth Button, Circle FB Auth Button, Magical FB Auth Button, Google Auth Button,
-  Circle GG Auth Button, Magical GG Auth Button, Github Auth Button, Circle GI Auth Button,
-  Magical Gi Auth Button, Twitter Auth Button, Circle TW Auth Button, Magical TW Auth Button,
-- Text Button, Gradient Text Button.
-- Custom FAB, Star FAB, Animated Custom FAB.
+<div align="center">flutter_button, which is a flutter package, contains animated, cool and awesome buttons. That you may like, thanks to this package you will be able to develop your application in a faster and cleaner code form.</div><br>  
+<div align="center">
+  <a href="https://flutter.dev">
+    <img src="https://img.shields.io/badge/Platform-Flutter-02569B?logo=flutter"
+      alt="Platform" />
+  </a>
+  <a href="https://pub.dev/packages/flutter_button">
+    <img src="https://img.shields.io/pub/v/flutter_button.svg"
+      alt="Pub Package" />
+  </a>
+  <br>
+  <a href="https://github.com/theiskaa/restnote/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/theiskaa/flutter_button?color=red"
+      alt="License: MIT" />
+  </a>
+</div><br>
 
+# Content's table
 
-## Overview
+- [Installing](#installing)
+- [Buttons Usage](#usage)
+  - [3D Button](#3D-Buttons)
+  - [Instagram Double Tap Love Button](#InstaLove)
+  - [Instagram Story Button](#InstaStory)
+  - [Hover Button](#Hover)
+  - [Like Button](#Like)
+  - [CheckBox Button](#CheckBox)
+  - [Anime Press Button](#AnimePress)
+  - [Animation FAB](#AnimationFAB)
+  - [Custom FAB](#CustomFAB)
+  - [Star FAB](#StarFAB)
+  - [Image FAB](#ImaegFAB)
+  - [Menu FAB](#MenuFAB)
+  - [Flutter Text Button](#Text)
+  - [Gradient Text Button](#GradientText)
+  - [Social Auth Buttons](#Social)
+  - [Magical Auth Buttons](#Magical)
+- [Want to get more?](#Magical)
 
-**_Usage and everthing about this packages was underlined down below. if you wanna to know more about using this plugin check example repo_** [example repository](https://github.com/theiskaa/flutter_button/tree/main/example).
+# Installing
 
-<img src="https://github.com/theiskaa/flutter_button/blob/main/example/assets/gif/3D.gif" width="200"> <img src="https://github.com/theiskaa/flutter_button/blob/main/example/assets/gif/social1.gif" width="200"> <img src="https://github.com/theiskaa/flutter_button/blob/main/example/assets/gif/social.gif" width="200"> <img src="https://github.com/theiskaa/flutter_button/blob/main/example/assets/gif/custom1.gif" width="200"> <img src="https://github.com/theiskaa/flutter_button/blob/main/example/assets/gif/custom.gif" width="200"> <img src="https://github.com/theiskaa/flutter_button/blob/main/example/assets/gif/text.gif" width="200"> <img src="https://github.com/theiskaa/flutter_button/blob/main/example/assets/gif/fab.gif" width="200">
+Add this to your package's `pubspec.yaml` file:
 
-# Installation and Usage.
-add this line on the `pubspec.yaml`
-
-```dart
+```yaml
 dependencies:
-  ...
-  flutter_button: ^0.0.2
+  flutter_button: ^0.0.4
 ```
 
-# OKI let's start using this 🏹
+and command pub get in termianal
 
-## 🛑 3D Button usage
+```
+$ flutter pub get
+```
 
-**_Default Mode_**
+and time to import package.
 
 ```dart
-import 'package:flutter_button/3d/3d_button.dart';
+import 'package:flutter_button/flutter_button.dart';
+```
+
+# Usage
+
+## 3D-Buttons
+
+<img src="https://raw.githubusercontent.com/theiskaa/flutter_button/master/example/assets/gifer/3d.gif" align = "right" height = "350px">
+
+```dart
+Button3D(
+  onPressed: () {},
+  child: Text("3d Button"),
+),
 
 Button3D(
- onPressed: () {},
- child: Text("3d Button"),
-),
-```
-
-**_3D Buttons With the custom properties_**
-
-```dart
-import 'package:flutter_button/3d/3d_button.dart';
-
- Button3D(
  style: StyleOf3dButton(
     backColor: Colors.red[900],
     topColor: Colors.red[400],
@@ -57,658 +85,243 @@ import 'package:flutter_button/3d/3d_button.dart';
 ),
 ```
 
-# ⚛︎ Social Auth Buttons
+## InstaLove
 
-**_Default Mode of Auth Button_**
+<img src="https://raw.githubusercontent.com/theiskaa/flutter_button/master/example/assets/gifer/instalove.gif" align = "right" height = "350px">
 
 ```dart
-import 'package:flutter_button/social/auth_button.dart';
+InstaLoveButton(
+  image: AssetImage("assets/photo.png"),
+  onTap: () {},
+),
 
-AuthButton(
+InstaLoveButton(
+ iconColor: Colors.red,
+ icon: Icons.favorite_border,
+ size: 80,
+ height: 250,
+ //width: MediaQuery.of(context).size.width,
+ curve: Curves.bounceInOut,
+ duration: Duration(seconds: 1),
+ image: NetworkImage("https://picsum.photos/200/300"),
  onTap: () {},
- child: Text("Sign In"),
 ),
 ```
 
-**_All Properties used version of Auth button_**
+## InstaStory
+
+<img src="https://raw.githubusercontent.com/theiskaa/flutter_button/master/example/assets/gifer/story.gif" align = "right" height = "200px">
 
 ```dart
-AuthButton(
-  onTap: () {},
-  child: childOfAuthButton(),
-
-  /// [opacityValue] is providing the value of the tapped button's opacity value.
-  opacityValue: .5,
-  height: 55,
-  width: MediaQuery.of(context).size.width / 1.2,
-  border: Border.all(color: Colors.white),
-  wGradient:
-    true, // if [wGradient] propert is true than [backgroundColor] property won't work
-  gradientColors: [
-    Colors.black.withOpacity(.7),
-    Colors.blue[700].withOpacity(.7),
-  ],
-  topLeftRadius: 0,
-  topRightRadius: 40,
-  bottomLeftRadius: 40,
-  bottomRightRadius: 0,
-  shadow: [
-    BoxShadow(
-      spreadRadius: 5,
-      blurRadius: 10,
-      offset: Offset(0, 3),
-      color: Colors.grey[900],
-    ),
-    /// Also you can add [decorationImage] val
+StoryButton(
+ size: 80,
+ onPressed: () {},
+ child: Image.asset(
+ 'assets/avatar.JPG',
+ height: 70,
+ ),
+ strokeWidth: 3.5,
+ radius: 100,
+ gradient: LinearGradient(
+  begin: Alignment.topRight,
+  end: Alignment.bottomLeft,
+  colors: [
+     Colors.pink,
+     Colors.orange,
   ],
  ),
-```
-
-**_Default Mode of facebook auth button_**
-
-```dart
-import 'package:flutter_button/social/facebook_auth_button.dart';
-
-FacebookAuthButton(
-  onTap: () {},
-  borderRadius: BorderRadius.circular(30),
 ),
-```
-
-**_Facebook Auth Button with custom properties_**
-
-```dart
-import 'package:flutter_button/social/facebook_auth_button.dart';
-
-FacebookAuthButton(
- onTap: () {},
- wGradientColors: true,
- wOpacity: true,
- borderRadius: BorderRadius.circular(30),
- opacityValue: .4,
- gradientColors: [
-  Colors.black,
-  Colors.blueGrey,
-],
-shadows: [
-  BoxShadow(
-   spreadRadius: 1.5,
-   blurRadius: 10,
-   offset: Offset(2, 8),
-   color: Colors.black,
+SizedBox(width: 30),
+AnimatedStoryButton(
+ onTap: (){},
+ storyButton: StoryButton(
+ size: 100,
+ onPressed: () {},
+ child: Image.network(
+     'https://avatars1.githubusercontent.com/u/59066341?s=400&v=4',
+     height: 80,
+ ),
+ strokeWidth: 5,
+ radius: 100,
+ gradient: LinearGradient(
+    colors: [
+     Colors.blue,
+     Colors.red,
+     Colors.green,
+    ],
   ),
- ],
-),
-```
-
-**_Default Mode of Google Auth Button_**
-
-```dart
-import 'package:flutter_button/social/google_auth_button.dart';
-
-GoogleAuthButton(
- onTap: () {},
- borderRadius: BorderRadius.circular(30),
- shadows: [
-   BoxShadow(
-    spreadRadius: 1.5,
-    blurRadius: 10,
-    offset: Offset(2, 7),
-    color: Color(0xff4285F4),
-  ),
- ],
-),
-```
-
-**_Google Auth Button with custom properties_**
-
-```dart
-import 'package:flutter_button/social/google_auth_button.dart';
-
-GoogleAuthButton(
- onTap: () {},
- wGradientColors: true,
- wOpacity: true,
- upperCasedTitle: true,
- iconColor: Colors.white,
- titleColor: Colors.white,
- borderRadius: BorderRadius.circular(30),
- opacityValue: .5,
- gradientColors: [
-   Colors.black,
-   Colors.blueGrey,
- ],
- shadows: [
-   BoxShadow(
-    spreadRadius: 1.5,
-    blurRadius: 10,
-    offset: Offset(2, 7),
-    color: Color(0xff4285F4),
-  ),
- ]
-),
-```
-
-**_Default Mode of github auth button_**
-
-```dart
-import 'package:flutter_button/social/github_auth_button.dart';
-
-GithubAuthButton(
- borderRadius: BorderRadius.circular(30),
- onTap: () {},
-),
-```
-
-**_Github Auth Button with custom properties_**
-
-```dart
-import 'package:flutter_button/social/github_auth_button.dart';
-
-GithubAuthButton(
- onTap: () {},
- wGradientColors: true,
- wOpacity: true,
- iconColor: Colors.black,
- titleColor: Colors.black,
- iconSize: 30,
- borderRadius: BorderRadius.circular(30),
- opacityValue: .4,
- gradientColors: [
-  Colors.white,
-  Colors.white,
- ],
- shadows: [
-    BoxShadow(
-      spreadRadius: 1.5,
-      blurRadius: 10,
-      offset: Offset(0.5, 6),
-      color: Colors.black,
-    ),
-  ],
-),
-```
-
-**_Default Mode of Twitter auth button_**
-
-```dart
-import 'package:flutter_button/social/twitter_auth_button.dart';
-
-TwitterAuthButton(
-  borderRadius: BorderRadius.circular(30),
-  onTap: () {},
-),
-```
-
-**_Twitter Auth Button with custom properties_**
-
-```dart
-import 'package:flutter_button/social/twitter_auth_button.dart';
-
-TwitterAuthButton(
-  onTap: () {},
-  wGradientColors: true,
-  wOpacity: true,
-  iconColor: Colors.black,
-  titleColor: Colors.black,
-  iconSize: 30,
-  borderRadius: BorderRadius.circular(30),
-  opacityValue: .4,
-  gradientColors: [
-    Colors.white,
-    Colors.white,
-  ],
-  shadows: [
-    BoxShadow(
-      spreadRadius: 1.5,
-      blurRadius: 10,
-      offset: Offset(0.5, 6),
-      color: Colors.black,
-    ),
-   ],
-),
-```
-
-## Circular Auth Buttons
-
-**_Facebook_**
-
-```dart
-import 'package:flutter_button/social/facebook_auth_button.dart';
-
-CircularFBAuthButton(
-  borderRadius: BorderRadius.circular(30),
-  onTap: () {},
-  shadows: [
-    BoxShadow(
-     spreadRadius: 1.5,
-     blurRadius: 10,
-     offset: Offset(2, 6),
-     color: Colors.black,
-    ),
-  ],
-),
-```
-
-**_Google_**
-
-```dart
-import 'package:flutter_button/social/google_auth_button.dart';
-
-CircularGGAuthButton(
-  borderRadius: BorderRadius.circular(30),
-  onTap: () {},
-  shadows: [
-    BoxShadow(
-     spreadRadius: 1.5,
-     blurRadius: 10,
-     offset: Offset(2, 6),
-     color: Color(0xff4285F4),
-    ),
-  ],
-),
-```
-
-**_Github_**
-
-```dart
-import 'package:flutter_button/social/github_auth_button.dart';
-
-CircularGIAuthButton(
-  backgorundColor: Colors.white,
-  opacityValue: .7,
-  wOpacity: true,
-  wBorder: true,
-  iconColor: Colors.black,
-  shadows: [
-    BoxShadow(
-      spreadRadius: 1,
-      blurRadius: 10,
-      offset: Offset(0.5, 3),
-      color: Colors.black,
-    ),
-  ],
-  borderRadius: BorderRadius.circular(30),
-  onTap: () {},
-),
-```
-
-**_Twitter_**
-
-```dart
-import 'package:flutter_button/social/twitter_auth_button.dart';
-
- CircularTWAuthButton(
-  borderRadius: BorderRadius.circular(30),
-  onTap: () {},
-  wOpacity: true,
-),
-// you of course can customize for yourself this button button i like this button with the default style
-```
-
-## Magical Auth Buttons
-
-**_Facebook_**
-
-```dart
-import 'package:flutter_button/social/facebook_auth_button.dart';
-
-MagicalFBButton(
-  title: "Sign In With Facebook",
-  opacityValue: .5,
-  onTap: () {},
-),
-```
-
-**_Google_**
-
-```dart
-import 'package:flutter_button/social/google_auth_button.dart';
-
-MagicalGGButton(
-  title: "Sign In With Google",
-  opacityValue: .5,
-  onTap: () {},
-),
-```
-
-**_Github_**
-
-```dart
-import 'package:flutter_button/social/github_auth_button.dart';
-
-MagicalGIButton(
- title: "Sign In With Google",
- opacityValue: .5,
- onTap: () {},
-),
-```
-
-**_Twitter_**
-
-```dart
-import 'package:flutter_button/social/twitter_auth_button.dart';
-
-MagicalTWButton(
- title: "Sign In With Twitter",
- opacityValue: .5,
- onTap: () {},
-),
-```
-
-# 💢 Custom Buttons: Hover, like, Opacity, Animation, Insta doubletap like...
-
-## 🌪 Hover Button:
-
-**_Default mode_**
-
-```dart
-import 'package:flutter_button/custom/hover_button.dart';
-
-HoverButton(
-  title: "Hover Button",
-  onTap: () {},
-),
-```
-
-**_All properties used version_**
-
-```dart
-import 'package:flutter_button/custom/hover_button.dart';
-
-HoverButton(
-  onTap: () {},
-  title: "Add To Cart",
-  titleSize: 30,
-  titleColor: Colors.orange[900],
-  spashColor: Colors.yellow,
-  tappedTitleColor: Colors.black,
-  fontWeight: FontWeight.bold,
-  borderColor: Colors.orange[900],
-  borderRadius: BorderRadius.only(
-  bottomLeft: Radius.circular(30),
-  topRight: Radius.circular(30),
  ),
 ),
 ```
 
-### 🌪 Animated Hover Button:
+## Hover
 
-**_Default mode_**
+<img src="https://raw.githubusercontent.com/theiskaa/flutter_button/master/example/assets/gifer/hover.gif" align = "right" height = "300px">
 
 ```dart
-import 'package:flutter_button/custom/hover_button.dart';
+HoverButton(
+ title: "Hover Button",
+ onTap: () {},
+),
 
 AnimatedHoverButton(
-  title: "Animated Hover Button",
-  onTap: () {},
+ title: "Animated Hover Button",
+ onTap: () {},
 ),
 ```
 
-**_All properties used version_**
+**Note:** You can override so customise button with this parameters: `titleSize`, `titleColor`, `spashColor`, `tappedTitleColor`, `fontWeight`, `borderColor`, `borderRadius`.
+
+## Like
+
+<img src="https://raw.githubusercontent.com/theiskaa/flutter_button/master/example/assets/gifer/like.gif" align = "right" height = "300px">
 
 ```dart
-import 'package:flutter_button/custom/hover_button.dart';
-
-AnimatedHoverButton(
+//Default mode
+LikeButton(
  onTap: () {},
- title: "Add To Cart",
- titleSize: 30,
- duration: Duration(milliseconds: 500),
- titleColor: Colors.orange[900],
- spashColor: Colors.yellow,
- tappedTitleColor: Colors.black,
- fontWeight: FontWeight.bold,
- borderColor: Colors.orange[900],
+),
+SizedBox(height: 30),
+// Like Button with fully options
+LikeButton(
+ icon: Icons.home,
+ deactiveColor: Colors.grey,
+ activeColor: Colors.purple,
+ deactiveSize: 50,
+ activeSize: 55,
+ curve: Curves.easeInExpo,
+ onTap: () {},
+),
+```
+
+## CheckBox
+
+<img src="https://raw.githubusercontent.com/theiskaa/flutter_button/master/example/assets/gifer/checkbox.gif" align = "right" height = "300px">
+
+```dart
+AnimatedCheckBox(
+ activeSize: 55,
+ defaultSize: 50,
+ activeColor: Colors.red,
+ onChanged: () {
+  value = !value;
+ },
+),
+//
+AnimatedTitleCheckBox(
+  title: "L",
+  onChanged: () {
+   value1 = !value1;
+   print("AnimatedTitleCheckBox's value = $value1");
+ },
+),
+//
+AnimatedTitleCheckBox(
+ inactiveColor: Colors.grey[300],
+ activeSize: 50,
+ defaultSize: 45,
+ activeTitleSize: 22,
+ defaultTitleSize: 16,
+ title: "YES",
+ onChanged: () {
+  value2 = !value2;
+  print("Customized AnimatedTitleCheckBox's value = $value2");
+ },
  borderRadius: BorderRadius.only(
-  bottomLeft: Radius.circular(30),
-  topRight: Radius.circular(30),
+  bottomLeft: Radius.circular(20),
+  topRight: Radius.circular(20),
  ),
 ),
-```
-
-## ❤️ Like Button:
-
-**_Default mode_**
-
-```dart
-import 'package:flutter_button/custom/like_button.dart';
-
-LikeButton(
-  onTap: () {},
+//
+AnimatedIconCheckBox(
+ icon: Icons.done,
+ onChanged: () {
+  value3 = !value3;
+  print("AnimatedIconCheckBox's value = $value3");
+ },
 ),
 ```
 
-**_All properties used version_**
+## Opacity
+
+<img src="https://raw.githubusercontent.com/theiskaa/flutter_button/master/example/assets/gifer/opacity.gif" align = "right" height = "250px">
 
 ```dart
-import 'package:flutter_button/custom/like_button.dart';
-
-LikeButton(
-  icon: Icons.home,
-  deactiveColor: Colors.grey,
-  activeColor: Colors.purple,
-  deactiveSize: 50,
-  activeSize: 55,
-  curve: Curves.easeInExpo,
-  onTap: () {},
-),
-```
-
-## 👻 Opacity Button:
-
-```dart
-import 'package:flutter_button/custom/opacity_button.dart';
-
 OpacityButton(
   onTap: () {},
   opacityValue: .3,
-  child: Image.network(
-    'https://picsum.photos/id/1/200/300',
+  child: Image.asset(
+    'assets/like.png',
     height: 60,
   ),
 ),
 ```
 
-## ⭐️ Animation Button:
+## AnimePress
+
+<img src="https://raw.githubusercontent.com/theiskaa/flutter_button/master/example/assets/gifer/animepress.gif" align = "right" height = "200px">
 
 ```dart
-import 'package:flutter_button/custom/anime_press_button.dart';
+AnimePressButton(
+ onTap: () {},
+ title: "Anime Press Button",
+),
 
 AnimePressButton(
-  borderRadius: BorderRadius.circular(100),
-  color: Colors.red,
-  wGradient: true,
-  gradientColors: [
-    Colors.pink,
-    Colors.purpleAccent,
-  ],
-  title: "Animation Button",
-  titleColor: Colors.white,
+ borderRadius: BorderRadius.circular(100),
+ color: Colors.red,
+ onTap: () {},
+ wGradient: true,
+ gradientColors: [
+   Colors.pink,
+   Colors.purpleAccent,
+ ],
+ title: "Animation Button",
+ titleColor: Colors.white,
 ),
 ```
 
-## ❤️ Insta DoubleTap Love Button:
+## AnimationFAB
 
-**_Default Usage_**
+<img src="https://raw.githubusercontent.com/theiskaa/flutter_button/master/example/assets/gifer/animatedFAB.gif" align = "right" height = "250px">
 
 ```dart
-import 'package:flutter_button/custom/insta_love_button.dart';
-
-InstaLoveButton(
-  image: NetworkImage("https://picsum.photos/200/300"),
-  onTap: () {},
+AnimatedCustomFAB(
+ child: Icon(Icons.add, color: Colors.black),
+ onTap: () {},
+ backgroundColor: Colors.white,
+ border: Border.all(color: Colors.black, width: 2),
 ),
 ```
 
-**_All Properties used mode and with asset's image_**
+**Note:** You can also override so customise button with this parameters: `size`, `tappedSize`, `duration`, `wGradient`, `wShadow`, `shadows`, `gradientColors`, `borderRadius`.
+if `wGradient` property is true than `backgroundColor:` property won't work.
+
+## CustomFAB
+
+<img src="https://raw.githubusercontent.com/theiskaa/flutter_button/master/example/assets/gifer/customFAB.gif" align = "right" height = "230px">
 
 ```dart
-import 'package:flutter_button/custom/insta_love_button.dart';
-
-InstaLoveButton(
-  iconColor: Colors.red,
-  icon: Icons.favorite_border,
-  size: 80,
-  height: 250,
-  //width: MediaQuery.of(context).size.width,
-  curve: Curves.bounceInOut,
-  duration: Duration(seconds: 1),
-  image: AssetImage("assets/photo.png"),
-  //image: NetworkImage("https://picsum.photos/200/300"),
-  onTap: () {},
-),
-```
-
-# 🆃 Text Buttons
-
-## Normal Text Button:
-
-```dart
-import 'package:flutter_button/text/text_button.dart';
-
-FlutterTextButton(
-  onTap: () {},
-  title: "Flutter Normal TextButton",
-  defaultSize: 25,
-  textAlign: TextAlign.center,
-  pressedSize: 22,
-  color: Colors.red[700],
-  fontWeight: FontWeight.bold,
-  // [locale:] Whathever you want
-  // [fontFamily:] type your fontFamily
-),
-```
-
-## 🏳️‍🌈 Gradient text button:
-
-```dart
-import 'package:flutter_button/text/gradient_text_button.dart';
-
-GradientTextButton(
-  onTap: () {},
-  title: "Gradient Text Button",
-  gradientColors: [
-    Colors.red,
-    Colors.orange[800],
-    Colors.yellow[700],
-    Colors.limeAccent[400],
-    Colors.blue[900],
-    Colors.purple,
-    Colors.purple[900]
-  ],
-  beginGradient: Alignment.topCenter,
-
-  /// [endGradient: ...] also you can add this endGradient function
-  defaultSize: 25,
-  textAlign: TextAlign.center,
-  pressedSize: 22,
-  fontWeight: FontWeight.bold,
-  /// [locale:] Whathever you wanna
-  /// [fontFamily:] type your fontFamily
-),
-```
-
-# 🔵 Floating Action Buttons
-
-## ⚫️ Custom FAB
-
-**_Default Mode_**
-
-```dart
-import 'package:flutter_button/fabs/custom_fab.dart';
-
 CustomFAB(
  child: Icon(Icons.add),
  onTap: () {},
-)
-```
-
-**_Custom Fab with all properties_**
-
-```dart
-import 'package:flutter_button/fabs/custom_fab.dart';
-
-CustomFAB(
- onTap: () {},
- child: Icon(Icons.add),
- backgroundColor: Colors.red,
- splashColor: Colors.black,
- hoverColor: Colors.blueGrey,
- topLeftRadius: 30,
- bottomRightRadius: 30,
- /// Also you can add this property [bottomLeftRadius:]
- /// And this [topRightRadius:]
+ border: BorderSide(color: Colors.black),
 ),
 ```
 
-## ⚫️🌪 Animated Custom FAB
+**Note:** You can also override so customise button with this parameters: `backgroundColor`, `splashColor`, `hoverColor`, `topLeftRadius`, `bottomRightRadius`, `topRightRadius`, `bottomLeftRadius`.
 
-**_Default Mode_**
+## StarFAB
 
-```dart
-import 'package:flutter_button/fabs/custom_fab.dart';
-
-AnimatedCustomFAB(
-  child: Icon(Icons.add,color: Colors.white),
-  onTap: () {},
-),
-```
-
-**_Animated Custom Fab with all properties_**
+<img src="https://raw.githubusercontent.com/theiskaa/flutter_button/master/example/assets/gifer/starFAB.gif" align = "right" height = "200px">
 
 ```dart
-import 'package:flutter_button/fabs/custom_fab.dart';
-AnimatedCustomFAB(
-  child: Icon(
-    Icons.add_a_photo,
-    color: Colors.white,
-  ),
-  onTap: () {},
-  size: 80,
-  tappedSize: 70,
-  duration: Duration(seconds: 1),
-  wGradient: true,
-  wShadow: true,
-  shadows: [
-    BoxShadow(
-      blurRadius: 15,
-      offset: Offset(0, 15),
-      spreadRadius: 2,
-      color: Colors.black.withOpacity(.4)
-    ),
-  ],
-  gradientColors: [
-    Colors.black,
-    Colors.blue[700],
-  ],
-  /// if [wGradient] property is true than [backgroundColor:] property won't work
-  borderRadius: BorderRadius.only(
-  bottomLeft: Radius.circular(30),
-  topRight: Radius.circular(30),
-  topLeft: Radius.circular(10),
-  bottomRight: Radius.circular(10),
-),
-```
-
-## ⭐️ Star FAB
-
-**_Default Mode_**
-
-```dart
-import 'package:flutter_button/fabs/star_fab.dart';
-
 StarFAB(
  child: Icon(Icons.add),
  onTap: () {},
 ),
-```
 
-**_Custom Fab with all properties_**
-
-```dart
-import 'package:flutter_button/fabs/star_fab.dart';
-
+/// All properties was used
 StarFAB(
  backgroundColor: Colors.black,
  child: Icon(Icons.add),
@@ -718,4 +331,154 @@ StarFAB(
 ),
 ```
 
-if you wanna to look this package's full usage exapmle, check the example repo which one is down to this package's repository: [example repository](https://github.com/theiskaa/flutter_button/tree/main/example).
+## ImaegFAB
+
+<img src="https://raw.githubusercontent.com/theiskaa/flutter_button/master/example/assets/gifer/imageFAB.gif" align = "right" height = "200px">
+
+```dart
+ImageFAB(
+ image: AssetImage("assets/earth.png"),
+ child: Icon(Icons.favorite, color: Colors.red, size: 40),
+ onTap: () {},
+ wOpacity: true,
+ opacityValue: .3,
+),
+```
+
+**Note:** You can also override so customise button with this parameters: `borderRadius`, `border`, `shadows`, `onImageError`, `imageColorFilter`, `imageFit`, `imageAlignment`, `imageCenterSlice`, `imageRepeat`, `imageMatchTextDirection`, `imageScale`.
+
+## MenuFAB
+
+<img src="https://raw.githubusercontent.com/theiskaa/flutter_button/master/example/assets/gifer/menuFAB.gif" align = "right" height = "350px">
+
+```dart
+MenuFAB(
+ curve: Curves.bounceInOut,
+ animatedIcon: AnimatedIcons.add_event,
+ activeColor: Colors.purple,
+ inactiveColor: Colors.pink,
+ firstItem: FloatingActionButton(
+   onPressed: () {},
+   child: Icon(Icons.favorite),
+ ),
+ seccondItem: FloatingActionButton(
+   onPressed: () {},
+   child: Icon(Icons.mail),
+ ),
+ thirdItem: FloatingActionButton(
+   onPressed: () {},
+   child: Icon(Icons.remove),
+ ),
+),
+```
+
+## Text
+
+<img src="https://raw.githubusercontent.com/theiskaa/flutter_button/master/example/assets/gifer/text.gif" align = "right" height = "350px">
+
+```dart
+FlutterTextButton(
+ title: "Text Button",
+ onTap: () {},
+),
+
+// Full options used version of TextButton
+FlutterTextButton(
+  onTap: () {},
+  wOpacity: true,
+  opacityValue: .3,
+  title: "Flutter Custom TextButton",
+  defaultSize: 25,
+  textAlign: TextAlign.center,
+  pressedSize: 22,
+  color: Colors.red[700],
+  fontWeight: FontWeight.bold,
+
+  /// [locale:] Whathever you wanna
+  /// [fontFamily:] type your fontFamily
+),
+```
+
+## GradientText
+
+<img src="https://raw.githubusercontent.com/theiskaa/flutter_button/master/example/assets/gifer/gradienttext.gif" align = "right" height = "350px">
+
+```dart
+GradientTextButton(
+ title: "Press Me",
+ onTap: () {},
+),
+
+/// Full options used version of TextButton
+GradientTextButton(
+  onTap: () {},
+  title: "Gradient Text Button",
+  wOpacity: true,
+  opacityValue: .3,
+  gradientColors: [...],
+  beginGradient: Alignment.topCenter,
+
+/// [endGradient: ...] also you can add this endGradient function
+  defaultSize: 25,
+  textAlign: TextAlign.center,
+  pressedSize: 22,
+  fontWeight: FontWeight.bold,
+
+/// [locale:] Whathever you wanna
+/// [fontFamily:] type your fontFamily
+),
+```
+
+## Social
+
+<img src="https://raw.githubusercontent.com/theiskaa/flutter_button/master/example/assets/gifer/social.gif" align = "right" height = "350px">
+
+```dart
+GithubAuthButton(
+  borderRadius: BorderRadius.circular(30),
+  wOpacity: true,
+  onTap: () {},
+),
+
+CircularGIAuthButton(
+ borderRadius: BorderRadius.circular(30),
+ onTap: () {},
+wOpacity: true,
+),
+
+```
+
+### **Note:**
+**`GithubAuthButton`** can change with `FacebookAuthButton`, `GoogleAuthButton` and `TwitterAuthButton`. <br/>
+And can take this parameters: <br/>
+`title`, `backgroundColor`, `titleColor`, `iconColor`, `shadows`, `fontSize`, `iconSize`, `fontWeight`, `wGradientColors`, `opacityValue`, `gradientColors`, `beginGradient`, `endGradient`. <br/>
+#
+**`CircularGIAuthButton`** can change with `CircularFBAuthButton`, `CircularGGAuthButton` and `CircularTWAuthButton`. <br/>
+And can take this parameters: <br/>
+`backgorundColor`, `iconColor`, `wBorder`, `borderColor`, `opacityValue`, `size`, `iconSize`, `shadows`, `borderRadius.
+
+## Magical
+
+<img src="https://raw.githubusercontent.com/theiskaa/flutter_button/master/example/assets/gifer/magical.gif" align = "right" height = "350px">
+
+```dart
+MagicalFBButton(
+ title: "Sign In With Facebook",
+ opacityValue: .5,
+ onTap: () {},
+),
+
+MagicalGGButton(
+ title: "Sign In With Google",
+ opacityValue: .5,
+ onTap: () {},
+),
+```
+**Note:** U can change only Magical`FB`Button with `GG`, `TW` or `GI` for get Magical Google, Twitter and Github buttons, <br/>
+**Magial Buttons:**   `MagicalFBButton`, `MagicalGGButton`, `MagicalGIButton`, `MagicalTWButton`.
+
+# Want to know more about `flutter_button`?
+if you wanna to know more about using this plugin check [example repository](https://github.com/theiskaa/flutter_button/tree/main/example).
+in there every button was used and explained everthing `flutter_button`
+
+## Thanks for looking!

@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_button/fabs/custom_fab.dart';
-import 'package:flutter_button/fabs/menu_fab.dart';
-import 'package:flutter_button/fabs/star_fab.dart';
-import 'package:flutter_button/fabs/image_fab.dart';
+import 'package:flutter_button/flutter_button.dart';
 
 class FabScreen extends StatelessWidget {
   const FabScreen({Key key}) : super(key: key);
@@ -11,6 +8,7 @@ class FabScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: MenuFAB(
+        curve: Curves.bounceInOut,
         animatedIcon: AnimatedIcons.add_event,
         activeColor: Colors.purple,
         inactiveColor: Colors.pink,
@@ -39,19 +37,21 @@ class FabScreen extends StatelessWidget {
               Column(
                 children: [
                   ImageFAB(
-                    image: AssetImage("assets/moon.png"),
-                    onTap: () {},
-                    wOpacity: true,
-
-                    /// also you can use that with child [child: Icon(Icons.add, color: Colors.black, size: 45)]
-                  ),
-                  SizedBox(height: 50),
-                  ImageFAB(
                     image: AssetImage("assets/earth.png"),
                     child: Icon(Icons.favorite, color: Colors.red, size: 40),
                     onTap: () {},
                     wOpacity: true,
                     opacityValue: .3,
+                  ),
+                  SizedBox(height: 50),
+                  AnimatedImageFAB(
+                    image: AssetImage("assets/moon.png"),
+                    onTap: () {},
+                    duration: Duration(milliseconds: 150),
+
+                    /// [child:]=
+                    /// [defaultSize:]
+                    /// [tappedSize:]
                   ),
                 ],
               ),

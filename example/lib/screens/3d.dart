@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_button/3d/3d_button.dart';
+import 'package:flutter_button/flutter_button.dart';
 
 class Button3DScreen extends StatelessWidget {
   const Button3DScreen({Key key}) : super(key: key);
@@ -7,6 +7,7 @@ class Button3DScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Colors.blueGrey[900],
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
