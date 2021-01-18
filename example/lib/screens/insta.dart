@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_button/insta/insta_love_button.dart';
-import 'package:flutter_button/insta/story_button.dart';
+import 'package:flutter_button/flutter_button.dart';
 
 class InstaScreen extends StatelessWidget {
   const InstaScreen({Key key}) : super(key: key);

@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_button/custom/animated_checkbox.dart';
-import 'package:flutter_button/custom/hover_button.dart';
-import 'package:flutter_button/custom/like_button.dart';
-import 'package:flutter_button/custom/opacity_button.dart';
-import 'package:flutter_button/custom/anime_press_button.dart';
+import 'package:flutter_button/flutter_button.dart';
 
 // ignore: must_be_immutable
 class Custom extends StatelessWidget {

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_button/text/gradient_text_button.dart';
-import 'package:flutter_button/text/text_button.dart';
-
+import 'package:flutter_button/flutter_button.dart';
 class TextScreen extends StatelessWidget {
   const TextScreen({Key key}) : super(key: key);
 
