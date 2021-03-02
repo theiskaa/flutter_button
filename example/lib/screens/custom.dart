@@ -25,10 +25,6 @@ class Custom extends StatelessWidget {
             SizedBox(height: 50),
             buildDivider(),
             SizedBox(height: 50),
-            buildAnimatedHoverButtons(),
-            SizedBox(height: 50),
-            buildDivider(),
-            SizedBox(height: 50),
             lovebuttons(),
             SizedBox(height: 50),
             buildDivider(),
@@ -124,18 +120,18 @@ class Custom extends StatelessWidget {
     );
   }
 
-  Column buildAnimatedHoverButtons() {
+  Column buildHoverButtons() {
     return Column(
       children: [
         // Default Mode
-        AnimatedHoverButton(
+        HoverButton(
           title: "Animated Hover Button",
           //title: "Animated Hover Button",
           onTap: () {},
         ),
         SizedBox(height: 50),
         // Hover button with custom spalsh color,custom title size and border radius
-        AnimatedHoverButton(
+        HoverButton(
           onTap: () {},
           title: "Buy Now",
           spashColor: Colors.red,
@@ -145,52 +141,17 @@ class Custom extends StatelessWidget {
         ),
         SizedBox(height: 50),
         // And this is all options used version
-        AnimatedHoverButton(
+        HoverButton(
           onTap: () {},
           title: "Add To Cart",
           titleSize: 30,
           titleColor: Colors.orange[900],
           spashColor: Colors.yellow,
-          tappedTitleColor: Colors.black,
-          fontWeight: FontWeight.bold,
-          borderColor: Colors.orange[900],
-          borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(30),
-            topRight: Radius.circular(30),
+          animatedTitleColor: Colors.black,
+          titleWeight: FontWeight.bold,
+          border: Border.all(
+            color: Colors.orange[900],
           ),
-        ),
-      ],
-    );
-  }
-
-  Column buildHoverButtons() {
-    return Column(
-      children: [
-        // Default Mode
-        HoverButton(
-          title: "Hover Button",
-          onTap: () {},
-        ),
-        SizedBox(height: 50),
-        // Hover button with custom spalsh color,custom title size and border radius
-        HoverButton(
-          onTap: () {},
-          title: "Buy Now",
-          spashColor: Colors.red,
-          titleSize: 20,
-          borderRadius: BorderRadius.circular(30),
-        ),
-        SizedBox(height: 50),
-        // And this is all options used version
-        HoverButton(
-          onTap: () {},
-          title: "Add To Cart",
-          titleSize: 30,
-          titleColor: Colors.orange[900],
-          spashColor: Colors.yellow,
-          tappedTitleColor: Colors.black,
-          fontWeight: FontWeight.bold,
-          borderColor: Colors.orange[900],
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(30),
             topRight: Radius.circular(30),
