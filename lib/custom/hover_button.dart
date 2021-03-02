@@ -34,7 +34,7 @@ class HoverButton extends StatefulWidget {
   /// Border Radius of [border] propery
   final BorderRadiusGeometry borderRadius;
 
-  /// Duration of animation, so [splashColor]'s duration of animation.
+  /// Duration of animation, so [splashColor]'s duration.
   final Duration duration;
 
   HoverButton({
@@ -63,7 +63,7 @@ class HoverButton extends StatefulWidget {
 
 class _HoverButtonState extends State<HoverButton>
     with SingleTickerProviderStateMixin {
-  /// For contorle and manage [_colorAnimation] and [_textColorAnimation]
+  /// For controle and manage [_colorAnimation] and [_textColorAnimation]
   AnimationController _animationController;
 
   // * Animations to change/animate spash and title.
