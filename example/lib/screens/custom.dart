@@ -16,7 +16,8 @@ class Custom extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 50),
         child: Column(
           children: [
-            buildCheckBoxs(), //IT'S JUST DEMO
+            SizedBox(height: 50),
+            buildOpacityButtons(),
             SizedBox(height: 50),
             buildDivider(),
             SizedBox(height: 50),
@@ -32,63 +33,12 @@ class Custom extends StatelessWidget {
             SizedBox(height: 50),
             buildDivider(),
             SizedBox(height: 50),
-            buildOpacityButtons(),
-            SizedBox(height: 50),
             buildDivider(),
             SizedBox(height: 50),
             buildAnimePressButton(),
           ],
         ),
       ),
-    );
-  }
-
-  Row buildCheckBoxs() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        AnimatedCheckBox(
-          activeSize: 55,
-          defaultSize: 50,
-          activeColor: Colors.red,
-          onChanged: () {
-            value = !value;
-          },
-        ),
-        SizedBox(width: 15),
-        AnimatedTitleCheckBox(
-          title: "L",
-          onChanged: () {
-            value1 = !value1;
-            print("AnimatedTitleCheckBox's value = $value1");
-          },
-        ),
-        SizedBox(width: 15),
-        AnimatedTitleCheckBox(
-          inactiveColor: Colors.grey[300],
-          activeSize: 50,
-          defaultSize: 45,
-          activeTitleSize: 22,
-          defaultTitleSize: 16,
-          title: "YES",
-          onChanged: () {
-            value2 = !value2;
-            print("Customized AnimatedTitleCheckBox's value = $value2");
-          },
-          borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(20),
-            topRight: Radius.circular(20),
-          ),
-        ),
-        SizedBox(width: 15),
-        AnimatedIconCheckBox(
-          icon: Icons.done,
-          onChanged: () {
-            value3 = !value3;
-            print("AnimatedIconCheckBox's value = $value3");
-          },
-        ),
-      ],
     );
   }
 
@@ -101,7 +51,7 @@ class Custom extends StatelessWidget {
           },
           title: "Anime Press Button",
         ),
-        SizedBox(height: 30), 
+        SizedBox(height: 30),
         AnimePressButton(
           borderRadius: BorderRadius.circular(100),
           color: Colors.red,
@@ -123,7 +73,13 @@ class Custom extends StatelessWidget {
       children: [
         /// Opacity Button with default [opacityValue]
         OpacityButton(
-          onTap: () {},
+          opacityValue: .3,
+          onTap: () {
+            print("tapped");
+          },
+          onLongPress: () {
+            print("long pressed ");
+          },
           child: Image.asset(
             'assets/like.png',
             height: 50,
@@ -133,7 +89,7 @@ class Custom extends StatelessWidget {
 
         /// Opacity Button with the custom [opacityValue]
         OpacityButton(
-          onTap: () {},
+          onLongPress: () {},
           opacityValue: .3,
           child: Image.asset(
             'assets/like.png',
