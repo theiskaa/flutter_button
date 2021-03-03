@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_button/flutter_button.dart';
+
 class TextScreen extends StatelessWidget {
   const TextScreen({Key key}) : super(key: key);
 
@@ -71,6 +72,7 @@ class TextScreen extends StatelessWidget {
       children: [
         // TextButton Default mode
         FlutterTextButton(
+          wAnimation: true,
           title: "Text Button",
           onTap: () {},
         ),
@@ -82,10 +84,10 @@ class TextScreen extends StatelessWidget {
           opacityValue: .3,
           title: "Flutter Custom TextButton",
           defaultSize: 25,
-          textAlign: TextAlign.center,
-          pressedSize: 22,
-          color: Colors.red[700],
-          fontWeight: FontWeight.bold,
+          titleAlign: TextAlign.center,
+          tappedSize: 22,
+          titleColor: Colors.red[700],
+          titleWeight: FontWeight.bold,
 
           /// [locale:] Whathever you wanna
           /// [fontFamily:] type your fontFamily

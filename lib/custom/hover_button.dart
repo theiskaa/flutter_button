@@ -10,6 +10,10 @@ class HoverButton extends StatefulWidget {
   /// and it would call into [onTapUp].
   final VoidCallback onTap;
 
+  /// Enable custom size.
+  final double height;
+  final double width;
+
   /// As default [HoverButton] haven't border.
   /// and that is custom border for use by user.
   final Border border;
@@ -55,6 +59,8 @@ class HoverButton extends StatefulWidget {
     this.borderRadius,
     this.titleWeight,
     this.duration,
+    this.height,
+    this.width,
   }) : super(key: key);
 
   @override
@@ -126,6 +132,10 @@ class _HoverButtonState extends State<HoverButton>
       child: AnimatedBuilder(
         animation: _animationController,
         builder: (context, child) => Container(
+          height: (widget.height != null) ? widget.height : 55,
+          width: (widget.width != null)
+              ? widget.width
+              : MediaQuery.of(context).size.width - 150,
           decoration: decoration(),
           child: Center(child: title()),
         ),

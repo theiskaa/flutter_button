@@ -18,19 +18,19 @@ class LikeButton extends StatefulWidget {
   /// If wanna change this, should use [curve] property.
   final Curve curve;
 
-  /// In deafult [deactiveColor] equals [Colors.grey[400]].
+  /// In default [deactiveColor] equals [Colors.grey[400]].
   /// And user can cutomize it by using [deactiveColor].
   final Color deactiveColor;
 
-  /// In deafult [activeColor] equals [Colors.red].
+  /// In default [activeColor] equals [Colors.red].
   /// And user can cutomize it by using [activeColor].
   final Color activeColor;
 
-  /// In deault size of [LikeButton] is [30]
+  /// In default size of [LikeButton] is [30]
   /// And user can customize it by using [deactiveSize] property.
   final double deactiveSize;
 
-  /// In deault [activeSize] of [LikeButton] is [33]
+  /// In default [activeSize] of [LikeButton] is [33]
   /// And user can customize it by using [activeSize] property.
   final double activeSize;
 
