@@ -88,6 +88,7 @@ class _OpacityButtonState extends State<OpacityButton> {
             : false,
       );
 
+  // To controle and get opacity true result.
   double getTrueOpacityValue() {
     if (_isTapped) {
       if (widget.opacityValue != null) {

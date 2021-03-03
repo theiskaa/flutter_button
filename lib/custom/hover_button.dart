@@ -7,7 +7,7 @@ class HoverButton extends StatefulWidget {
   final String title;
 
   /// [onTap] take function.
-  /// and in calling this function into [onTapUp].
+  /// and it would call into [onTapUp].
   final VoidCallback onTap;
 
   /// As default [HoverButton] haven't border.

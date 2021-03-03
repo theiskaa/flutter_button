@@ -99,30 +99,7 @@ class FabScreen extends StatelessWidget {
   Column buildCustomFabs() {
     return Column(
       children: [
-        /// Default Custom FAB
-        CustomFAB(
-          child: Icon(Icons.add),
-          onTap: () {},
-          border: BorderSide(color: Colors.black),
-        ),
-        SizedBox(height: 50),
-
-        /// All properties was used
-        CustomFAB(
-          onTap: () {},
-          border: BorderSide(color: Colors.red, width: 3),
-          child: Icon(Icons.add, color: Colors.red),
-          backgroundColor: Colors.white,
-          splashColor: Colors.red,
-          hoverColor: Colors.redAccent[700],
-          topLeftRadius: 30,
-          bottomRightRadius: 30,
-
-          /// Also you can add this property [bottomLeftRadius:]
-          /// And this [topRightRadius:]
-        ),
-        SizedBox(height: 50),
-        AnimatedCustomFAB(
+        AnimatedFloatingActionButton(
           child: Icon(Icons.add, color: Colors.black),
           onTap: () {},
           backgroundColor: Colors.white,
@@ -130,7 +107,7 @@ class FabScreen extends StatelessWidget {
         ),
         SizedBox(height: 50),
         // Animated Custom FAB with all properties
-        AnimatedCustomFAB(
+        AnimatedFloatingActionButton(
           child: Icon(
             Icons.add_a_photo,
             color: Colors.white,
