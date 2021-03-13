@@ -32,7 +32,7 @@ class FlutterTextButton extends StatefulWidget {
   /// user can customize it by set custom weight with [titleWeight] property
   final FontWeight titleWeight;
 
-  // To work move title around the screen
+  // To move title around the screen
   final TextAlign titleAlign;
 
   // Custom font property.
@@ -45,6 +45,9 @@ class FlutterTextButton extends StatefulWidget {
   /// As default duration equals [milliseconds: 300],
   /// and user can customize it by [duration] property.
   final Duration duration;
+
+  // To localization title.
+  final Locale titleLocale;
 
   FlutterTextButton({
     Key key,
@@ -66,6 +69,7 @@ class FlutterTextButton extends StatefulWidget {
     this.fontFamily,
     this.wAnimation,
     this.duration,
+    this.titleLocale,
   }) : super(key: key);
 
   @override
@@ -95,7 +99,9 @@ class _FlutterTextButtonState extends State<FlutterTextButton>
       end: (widget.tappedSize != null) ? widget.tappedSize : 18,
     ).animate(_animationController);
 
-    _animationController.addListener(() {});
+    _animationController.addListener(() {
+      setState(() {});
+    });
   }
 
   bool _isTapped = false;
@@ -186,6 +192,7 @@ class _FlutterTextButtonState extends State<FlutterTextButton>
         textAlign:
             (widget.titleAlign != null) ? widget.titleAlign : TextAlign.center,
         style: TextStyle(
+          locale: widget.titleLocale,
           fontSize: _sizeAnimation.value,
           color: (widget.titleColor != null) ? widget.titleColor : Colors.black,
           fontWeight: (widget.titleWeight != null)
