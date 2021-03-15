@@ -1,5 +1,3 @@
-library flutter_buttons;
-
 import 'package:flutter/material.dart';
 
 class StyleOf3dButton {

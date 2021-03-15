@@ -49,9 +49,9 @@ class TextScreen extends StatelessWidget {
 
           /// [endGradient: ...] also you can add this endGradient function
           defaultSize: 25,
-          textAlign: TextAlign.center,
-          pressedSize: 22,
-          fontWeight: FontWeight.bold,
+          titleAlign: TextAlign.center,
+          tappedSize: 22,
+          titleWeight: FontWeight.bold,
 
           /// [locale:] Whathever you wanna
           /// [fontFamily:] type your fontFamily
