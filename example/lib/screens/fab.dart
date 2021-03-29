@@ -8,24 +8,6 @@ class FabScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: MenuFAB(
-        curve: Curves.bounceInOut,
-        animatedIcon: AnimatedIcons.add_event,
-        activeColor: Colors.purple,
-        inactiveColor: Colors.pink,
-        firstItem: FloatingActionButton(
-          onPressed: () {},
-          child: Icon(Icons.favorite),
-        ),
-        seccondItem: FloatingActionButton(
-          onPressed: () {},
-          child: Icon(Icons.mail),
-        ),
-        thirdItem: FloatingActionButton(
-          onPressed: () {},
-          child: Icon(Icons.remove),
-        ),
-      ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(50),
         child: Center(

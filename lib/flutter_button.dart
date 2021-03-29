@@ -3,7 +3,6 @@ export 'custom/anime_press_button.dart';
 export 'custom/hover_button.dart';
 export 'custom/like_button.dart';
 export 'custom/opacity_button.dart';
-export 'fabs/menu_fab.dart';
 export 'fabs/star_fab.dart';
 export 'fabs/image_fab.dart';
 export 'insta/insta_love_button.dart';

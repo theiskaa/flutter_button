@@ -1,5 +1,3 @@
-library flutter_button;
-
 import 'package:flutter/material.dart';
 
 class ImageFAB extends StatefulWidget {
@@ -138,20 +136,6 @@ class _ImageFABState extends State<ImageFAB> {
   }
 }
 
-///
-///
-///
-///
-///
-///
-///
-///
-///
-///
-///
-///
-/// Animated Image FAB
-
 class AnimatedImageFAB extends StatefulWidget {
   final ImageProvider<Object> image;
   final Function onTap;
@@ -163,7 +147,6 @@ class AnimatedImageFAB extends StatefulWidget {
   final List<BoxShadow> shadows;
   final Duration duration;
 
-  ///
   final void Function(Object, StackTrace) onImageError;
   final ColorFilter imageColorFilter;
   final BoxFit imageFit;
@@ -185,7 +168,6 @@ class AnimatedImageFAB extends StatefulWidget {
     this.shadows,
     this.duration,
 
-    ///
     this.onImageError,
     this.imageColorFilter,
     this.imageFit,

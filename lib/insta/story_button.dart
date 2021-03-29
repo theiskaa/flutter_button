@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_button/custom/opacity_button.dart';
 
 class StoryButton extends StatelessWidget {
   final _PaintGradient _painter;
@@ -8,12 +9,14 @@ class StoryButton extends StatelessWidget {
   final double size;
   final HitTestBehavior behavior;
   final double childRadius;
+  final double opacityValue;
 
   StoryButton({
     this.size,
     this.behavior,
     double strokeWidth,
     double radius,
+    this.opacityValue = .5,
     this.childRadius,
     @required Gradient gradient,
     @required Widget child,
@@ -31,8 +34,8 @@ class StoryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomPaint(
       painter: _painter,
-      child: GestureDetector(
-        behavior: (behavior != null) ? behavior : HitTestBehavior.translucent,
+      child: OpacityButton(
+        opacityValue: opacityValue,
         onTap: _callback,
         child: Container(
           height: (size != null) ? size : 70,
@@ -106,15 +109,6 @@ class _PaintGradient extends CustomPainter {
   bool shouldRepaint(CustomPainter oldDelegate) => oldDelegate != this;
 }
 
-///
-///
-///
-///
-///
-///
-///
-///
-///
 ///
 
 class AnimatedStoryButton extends StatefulWidget {
